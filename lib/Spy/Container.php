@@ -57,7 +57,7 @@ class Container
 			throw new Exception('Injection failed, second argument ($callable) must be a valid callable.');
 		}
 
-		$this->injections[$className] = $callable;
+		$this->injections[$identifier] = $callable;
 	}
 
 	/**
