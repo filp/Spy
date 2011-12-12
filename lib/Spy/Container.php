@@ -33,7 +33,7 @@ namespace Spy;
  * @package Spy
  * @version 1
  */
-class Container
+class Container implements \IteratorAggregate
 {
 	/**
 	 * @access protected
@@ -113,5 +113,15 @@ class Container
 	public function remove($identifier)
 	{
 		unset($this->injections[$identifier]);
+	}
+	
+	/**
+	 * @access public
+	 * @see    \IteratorAggregate
+	 * @return array
+	 */
+	public function getIterator()
+	{
+		return (array) $this->injections;
 	}
 }
